@@ -11,6 +11,34 @@
 #include <cmath>
 #include <cstdlib>
 
+// smallest number finder
+int Smallest(int arraySmall[], int NUM_NUMS) {
+    int smallest = 100;
+    int each;
+    // use a loop to find the smallest number
+    for (each = 0; each < NUM_NUMS; each++) {
+        if (arraySmall[each] < smallest) {
+            smallest = arraySmall[each];
+        }
+    }
+    // print result to user
+    std::cout << "\nThe smallest number is " << smallest;
+}
+
+// biggest number finder
+int Biggest(int arrayBig[], int NUM_NUMS) {
+    int each;
+    int largest = 0;
+    // use a loop to find the biggest number
+    for (each = 0; each < NUM_NUMS; each++) {
+        if (arrayBig[each] > largest) {
+            largest = arrayBig[each];
+        }
+    }
+    // print result to user
+    std::cout << "\nThe largest number is " << largest;
+}
+
 // main function
 int main() {
     // greets the user and describes the program
@@ -38,19 +66,7 @@ int main() {
     // define some other vars
     float total = 0;
     int each;
-    int largest = 0;
-    int smallest = 100;
-    // use a loop to add all the numbers in the array together
-    for (each = 0; each < NUM_NUMS; each++) {
-        if (arrayOfNums[each] > largest) {
-            largest = arrayOfNums[each];
-        }
-        if (arrayOfNums[each] < smallest) {
-            smallest = arrayOfNums[each];
-        }
-    }
-
-    // tell the user what the total and average is
-    std::cout << "\nThe smallest number is " <<
-    smallest << "\nThe largest number is " << largest;
+    // call the functions to determine what the largest and smallest numbers are
+    Smallest(arrayOfNums, NUM_NUMS);
+    Biggest(arrayOfNums, NUM_NUMS);
 }
